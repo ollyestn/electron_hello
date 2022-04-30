@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Hello World!</title>
+    </head>
+	
+    <body>
+		<script >
+			try {
+				const {ipcRenderer } =require('electron');
+				console.log("ipcRenderer is ok!")
+				const path = require('path');
+				const fs = require('fs');
+				const os=require('os');  //获取系统数据
+				var homedir=os.homedir();  //当前用户路径
+				console.log("homedir:"+homedir);
+			} catch (error) {
+				 console.log(error)
+				 window.globalConfig={}
+			}
+		</script>
+        <h1 id="h1">Hello World!</h1>
+        We are using node
+        <script>
+            document.write(process.versions.node)
+        </script>
+        Chrome
+        <script>
+            document.write(process.versions.chrome)
+        </script>,
+        and Electron
+        <script>
+            document.write(process.versions.electron)
+        </script>
+    </body>
+</html>
